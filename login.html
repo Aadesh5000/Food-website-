@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Dabba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Login to My Dabba</h1>
+    </header>
+
+    <main>
+        <form id="loginForm">
+            <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" required>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+
+            <input type="text" id="otp" placeholder="Enter OTP" style="display:none;" required>
+            <button type="button" id="verifyBtn" onclick="verifyOTP()" style="display:none;">Verify & Login</button>
+        </form>
+    </main>
+
+    <script>
+        function sendOTP() {
+            let mobile = document.getElementById("mobileNumber").value;
+            if (mobile.length === 10) {
+                alert("✅ OTP Sent! (Use 1234 for testing)");
+                document.getElementById("otp").style.display = "block";
+                document.getElementById("verifyBtn").style.display = "block";
+            } else {
+                alert("❌ Please enter a valid 10-digit mobile number.");
+            }
+        }
+
+        function verifyOTP() {
+            let otp = document.getElementById("otp").value;
+            if (otp === "1234") {  
+                alert("✅ Login Successful!");
+                window.location.href = "menu.html";  // Redirect to Menu Page
+            } else {
+                alert("❌ Invalid OTP! Try Again.");
+            }
+        }
+    </script>
+
+</body>
+</html>

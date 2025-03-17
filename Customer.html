@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Dabba</h1>
+        <p>Choose Your Weekly / Monthly Plan</p>
+    </header>
+
+    <main>
+        <h2>Available Tiffin Plans:</h2>
+        <ul>
+            <li>Basic Plan - ₹2000/month <button>Order Now</button></li>
+            <li>Deluxe Plan - ₹3000/month <button>Order Now</button></li>
+            <li>Premium Plan - ₹4000/month <button>Order Now</button></li>
+        </ul>
+    </main>
+
+    <script>
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                alert("Your Order Has Been Placed!");
+            });
+        });
+    </script>
+</body>
+</html>

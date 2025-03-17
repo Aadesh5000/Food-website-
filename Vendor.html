@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vendor Dashboard</h1>
+        <p>Upload Your Tiffin Plans</p>
+    </header>
+
+    <main>
+        <form id="uploadForm">
+            <input type="text" id="planName" placeholder="Tiffin Plan Name" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <button type="submit">Upload Plan</button>
+        </form>
+        
+        <h2>Your Plans:</h2>
+        <ul id="plansList"></ul>
+    </main>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let planName = document.getElementById("planName").value;
+            let price = document.getElementById("price").value;
+            let list = document.getElementById("plansList");
+            let newItem = document.createElement("li");
+            newItem.textContent = `${planName} - ₹${price}`;
+            list.appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
